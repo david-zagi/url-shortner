@@ -7,7 +7,7 @@ import shortid from 'shortid'
 import { connectDb } from '@/components/connector/mongoose-connector'
 
 
-const baseUrl = `mongodb+srv://davidzagi:2554COOL@cluster0.aqfo9va.mongodb.net/?retryWrites=true&w=majority`
+const baseUrl = ``
 
 
 export default  async function urlHandler(
@@ -47,7 +47,7 @@ export default  async function urlHandler(
                     date: new Date()
                 });
                 console.log({newURL: url})
-                await url.save();
+                await url?.save();
                 res.json(url);
             }
         } catch (err) {
